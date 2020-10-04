@@ -7,7 +7,7 @@ https://github.com/Sjofartsdirektoratet/APS-Simulator/tree/master/testdata_d1
 Using docker to run a fuseki server, with a dotnet core api 
 
 To run the fuseki server with the dataset run (Available at http://localhost:3030)
-  docker-compose up
+- docker-compose up
  
 ### To add you own dataset or files to the fuseki server
 There are 2 default datasets APS and ET.
