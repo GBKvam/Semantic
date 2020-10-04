@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "ni1tfeYiRg8JUHnnax/bmru5/uRhw3sdPnm2RjNzPXhl+wyqXnDnc+lDbQXNSf0TtIevgOdznjm2bBqNQ2RtSg==",
+  "success": true,
+  "projectFilePath": "E:\\Github\\Semantic\\Semantic\\Semantic.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Anders\\.nuget\\packages\\restsharp\\106.11.7\\restsharp.106.11.7.nupkg.sha512"
+  ],
+  "logs": []
+}
