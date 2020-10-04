@@ -1,2 +1,7 @@
 # Semantic
-Using a fuseki server, with a dotnet core api and a flutter app as frontend
+
+## Backend
+Using docker to run a fuseki server, with a dotnet core api 
+
+## Frontend
+flutter app as frontend
