@@ -1,6 +1,7 @@
 # Semantic
 
 Will be using the dataset provided by Sjøfartsdirektoratet
+
 https://github.com/Sjofartsdirektoratet/APS-Simulator/tree/master/testdata_d1
 
 ## Backend
@@ -18,6 +19,7 @@ Defined in the docker-compose.yml file
 - FUSEKI_DATASET_2=ET
       
 The dataset are populated from the datasets directory in the project (this will change to a github repo in future versions)
+
 Data loaded into the dataset are defined in the scripts/load_datasets.sh file
 APS in line 19 to 23
 ET in line 26 to 30
