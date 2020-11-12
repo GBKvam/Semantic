@@ -5,9 +5,9 @@ using System.Threading.Tasks;
 
 namespace Semantic.Sparql
 {
-    public class Queries
+    public class APS_Queries  
     {
-        public Queries()
+        public APS_Queries()
         {
 
         }
@@ -240,19 +240,26 @@ namespace Semantic.Sparql
 
         public string requiredEducation(string id, string language)
         {
-            return prefix + "SELECT DISTINCT ?sgsDescription " +
-            "WHERE { " +
-            "    ?nodeShape sh:targetClass ?certClass . " +
-            "    FILTER(REGEX(STR(?certClass), \"" + id + "\")) " +
-            "    ?nodeShape sh:or/rdf:rest{0}/rdf:first ?orListItem . " +
-            "    ?orListItem sh:and/rdf:rest*/rdf:first ?andListItem . " +
-            "    ?andListItem sh:path :hasSeagoingServiceRequirement ; " +
-            "        sh:hasValue ?seagoingservice ; " +
-            "        sh:order 1 .  " +
-            "    ?sgsNodeShape sh:targetClass ?seagoingservice ; " +
-            "            sh:description ?sgsDescription . " +
-            "    FILTER (LANG(?sgsDescription) = '" + language + "')  " +
-            "} ";
+            return prefix + "SELECT DISTINCT ?education ?educationLabel " +
+                "WHERE { " +
+                "  ?nodeShape sh:targetClass ?certClass . " +
+                "  FILTER(REGEX(STR(?certClass), \"" + id + "\")) " +
+                "  OPTIONAL { " +
+                "  	?nodeShape sh:or/rdf:rest*/rdf:first ?orListItem . " +
+                "    ?orListItem sh:path :requiresEducation ; " +
+                "                sh:hasValue ?education . " +
+                "    ?education rdfs:label ?educationLabel . " +
+                "    FILTER(LANG(?educationLabel) = 'no') " +
+                "  } " +
+                "  OPTIONAL { " +
+                "  	?nodeShape sh:property ?propertyShape . " +
+                "    ?propertyShape sh:path :requiresEducation ; " +
+                "                   sh:hasValue ?education . " +
+                "    ?education rdfs:label ?educationLabel . " +
+                "    FILTER(LANG(?educationLabel) = '" + language + "') " +
+                "  } " +
+                "} ";
+
         }
 
         public string requiredSGSFirstAlternative(string id, string language)
